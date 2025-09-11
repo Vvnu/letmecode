@@ -7,6 +7,7 @@
 # Example 2:
 # Input: nums = [2,2,1,1,1,2,2]
 # Output: 2
+
 class Solution(object):
     def majorityElement(self, nums):
         """
@@ -15,8 +16,14 @@ class Solution(object):
         """
         count = 0
         element = None
+
         for num in nums:
-            if count ==0:
-                element = num
-                count+=1 if element == num else -1
+            if count == 0:
+                element = num   # choose new candidate
+            if num == element:
+                count += 1
+            else:
+                count -= 1
+
         return element
+# The Boyer-Moore Voting Algorithm is used here to find the majority element in linear time and constant space.

@@ -36,12 +36,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # Initialize our variables using the first element.
         max_sum =nums[0]
         curr_sum=0
+        # Start with the 2nd element since we already used the first one.   
         for i in range(len(nums)):
             curr_sum+=nums[i]
+            # Update max_sum if curr_sum is larger
             if(curr_sum > max_sum):
                 max_sum = curr_sum
+            # If curr_sum drops below 0, reset it to 0
             if (curr_sum <= 0):
                 curr_sum=0 
 

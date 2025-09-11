@@ -21,5 +21,7 @@
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
         n=len(nums)
+        #formula for the sum of first n natural numbers
         total_sum=n*(n+1)//2
+        #subtracting the sum of the given array from the total sum to get the missing number
         return total_sum-sum(nums)
